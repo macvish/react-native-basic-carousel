@@ -10,9 +10,11 @@ import {
 
 import Pagination from './pagination'
 
-interface CarouselProps extends FlatListProps<{}> {
+export interface CarouselProps extends FlatListProps<{}> {
   data: Array<{}>
-  renderItem: ListRenderItem<{}>
+  renderItem: ListRenderItem<{
+    [x: string]: any
+  }>
   onSnapToItem?: (item: {}) => void
   bounces?: boolean
   pagination?: boolean
