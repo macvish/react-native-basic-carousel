@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window')
 interface PaginationProps {
   data: {}[]
   activeIndex: Animated.Value
-  color: string
+  color?: string
 }
 
 const Pagination: React.FC<PaginationProps> = ({
