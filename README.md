@@ -1,5 +1,5 @@
-# react-native-simple-carouse
-This is a simple React Native carousel which features a pagination.
+# react-native-basic-carousel
+This is a basic React Native carousel which features a pagination.
 
 ![alt-tag](https://github.com/macvish/react-native-basic-carousel/blob/develop/example/example.gif)
 
@@ -7,10 +7,10 @@ This is a simple React Native carousel which features a pagination.
 
 1. Download package with npm or yarn
 ```
-npm install react-native-simple-carousel
+npm install react-native-basic-carousel
 ```
 ```
-yarn add react-native-simple-carousel
+yarn add react-native-basic-carousel
 ```
 2. Install pods
 
@@ -28,7 +28,7 @@ npx react-native run-ios
 ## Example
 
 ```jsx
-import Carousel from 'react-native-simple-carousel'
+import Carousel from 'react-native-basic-carousel'
 
 <Carousel 
   data={data} 
