@@ -46,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
     })
   }
 
-  return <View style={styles.dotContainer}> {renderItems()}</View>
+  return <View style={styles.dotContainer}>{renderItems()}</View>
 }
 
 export default Pagination
@@ -54,7 +54,6 @@ export default Pagination
 const useStyle = () => {
   const styles = StyleSheet.create({
     dotContainer: {
-      flex: 0.2,
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',

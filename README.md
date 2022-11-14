@@ -1,7 +1,7 @@
 # react-native-simple-carouse
 This is a simple React Native carousel which features a pagination.
 
-<!-- ![alt-tag](/SCRN.gif) -->
+![alt-tag](/example/example.gif)
 
 ## Installation
 
