@@ -1,7 +1,7 @@
 # react-native-simple-carouse
 This is a simple React Native carousel which features a pagination.
 
-![alt-tag](/example/example.gif)
+![alt-tag](https://github.com/macvish/react-native-basic-carousel/blob/develop/example/example.gif)
 
 ## Installation
 
@@ -41,7 +41,7 @@ import Carousel from 'react-native-simple-carousel'
 | Props | Description  | Type | Default |
 | ----- | ------------ | ---- | ------- |
 | `data`  | Array of items to loop on | Array | **Required** |
-| `renderItem` | Takes an item from data and renders it into the list. The function receives one argument {item, index} Array | **Required** |
+| `renderItem` | Takes an item from data and renders it into the list. The function receives one argument {item, index} Array | Function | **Required** |
 | `onSnapToItem` | Callback fired after snapping to an item | Function | `undefined`|
 | `bounces` | When true, the carousel bounces when it reaches the end (only available on `ios`) | Boolean | `false` |
 | `pagination` | When true, pagination is displayed under the carousel item | Boolean | `false` |
