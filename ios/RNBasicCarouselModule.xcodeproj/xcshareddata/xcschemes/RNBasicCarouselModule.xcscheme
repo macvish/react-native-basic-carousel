@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA0EFF5F236CC8FB00069FA8"
-               BuildableName = "libRNSimpleCarouselModule.a"
-               BlueprintName = "RNSimpleCarouselModule"
-               ReferencedContainer = "container:RNSimpleCarouselModule.xcodeproj">
+               BuildableName = "libRNBasicCarouselModule.a"
+               BlueprintName = "RNBasicCarouselModule"
+               ReferencedContainer = "container:RNBasicCarouselModule.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA0EFF5F236CC8FB00069FA8"
-            BuildableName = "libRNSimpleCarouselModule.a"
-            BlueprintName = "RNSimpleCarouselModule"
-            ReferencedContainer = "container:RNSimpleCarouselModule.xcodeproj">
+            BuildableName = "libRNBasicCarouselModule.a"
+            BlueprintName = "RNBasicCarouselModule"
+            ReferencedContainer = "container:RNBasicCarouselModule.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
-import RNSimpleCarouselModule, { Carousel } from 'react-native-simple-carousel'
+import RNBasicCarouselModule, { Carousel } from 'react-native-basic-carousel'
 
 const { width } = Dimensions.get('window')
 interface Data {
@@ -37,7 +37,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log(RNSimpleCarouselModule)
+    console.log(RNBasicCarouselModule)
   })
 
   return <Carousel data={data} renderItem={renderItem} onSnapToItem={getItem} itemWidth={width} pagination />

@@ -1,11 +1,11 @@
-package com.macanthonyahaotu.reactnativesimplecarousel
+package com.macanthonyahaotu.reactnativebasiccarousel
 
 import com.facebook.react.ReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
 
-class RNSimpleCarouselPackage : ReactPackage {
+class RNBasicCarouselPackage : ReactPackage {
 
     override fun createViewManagers(reactContext: ReactApplicationContext):
             MutableList<ViewManager<*, *>> {
@@ -14,6 +14,6 @@ class RNSimpleCarouselPackage : ReactPackage {
 
     override fun createNativeModules(reactContext: ReactApplicationContext):
             MutableList<NativeModule> {
-        return mutableListOf(RNSimpleCarouselModule(reactContext))
+        return mutableListOf(RNBasicCarouselModule(reactContext))
     }
 }

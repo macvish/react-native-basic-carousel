@@ -110,4 +110,4 @@ export const Carousel: React.FC<CarouselProps> = ({
   )
 }
 
-export default NativeModules.RNSimpleCarouselModule
+export default NativeModules.RNBasicCarouselModule

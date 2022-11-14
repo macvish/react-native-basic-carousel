@@ -1,14 +1,14 @@
 //
-//  RNSimpleCarouselModule.swift
-//  RNSimpleCarouselModule
+//  RNBasicCarouselModule.swift
+//  RNBasicCarouselModule
 //
 //  Copyright © 2022 Macanthony Ahaotu. All rights reserved.
 //
 
 import Foundation
 
-@objc(RNSimpleCarouselModule)
-class RNSimpleCarouselModule: NSObject {
+@objc(RNBasicCarouselModule)
+class RNBasicCarouselModule: NSObject {
   @objc
   func constantsToExport() -> [AnyHashable : Any]! {
     return ["count": 1]
