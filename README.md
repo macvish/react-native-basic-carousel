@@ -33,6 +33,7 @@ import Carousel from 'react-native-basic-carousel'
 <Carousel 
   data={data} 
   renderItem={({item, index}) => <View>{...}</View>}
+  itemWidth={width}
   onSnapItem={(item) => console.log(item)}
 />
 ```
@@ -42,6 +43,7 @@ import Carousel from 'react-native-basic-carousel'
 | ----- | ------------ | ---- | ------- |
 | `data`  | Array of items to loop on | Array | **Required** |
 | `renderItem` | Takes an item from data and renders it into the list. The function receives one argument {item, index} Array | Function | **Required** |
+| `itemWidth` | Width of carousel's item and carousel itself | Number | **Required** |
 | `onSnapToItem` | Callback fired after snapping to an item | Function | `undefined`|
 | `bounces` | When true, the carousel bounces when it reaches the end (only available on `ios`) | Boolean | `false` |
 | `pagination` | When true, pagination is displayed under the carousel item | Boolean | `false` |
