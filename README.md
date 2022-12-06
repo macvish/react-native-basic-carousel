@@ -50,7 +50,7 @@ import Carousel from 'react-native-basic-carousel'
 | `bounces` | When true, the carousel bounces when it reaches the end (only available on `ios`) | Boolean | `false` |
 | `pagination` | When true, pagination is displayed under the carousel item | Boolean | `false` |
 | `paginationColor` | Takes a color code for the pagination dots | String |  `undefined` |
-| `paginationType` | Display pagination dots in either cirlce mode or default (Rectangle) | String (`default | circle`) |  `default` |
+| `paginationType` | Display pagination dots in either cirlce mode or default (Rectangle) | String (`default`, `circle`) |  `default` |
 | `getCurrentIndex` | callback to get the current displayed item index  | Function |  `undefined` |
 
 ### Inherited props

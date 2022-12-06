@@ -46,7 +46,6 @@ const App = () => {
     onSnapToItem={getItem}
     itemWidth={width}
     pagination
-    autoplay
     paginationType='circle'
   />
 }

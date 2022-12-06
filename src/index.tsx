@@ -59,16 +59,13 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   const onViewableItemsChanged = React.useCallback(
     ({
-      changed,
-      viewableItems,
+      changed
     }: {
       viewableItems: Array<ViewToken>
       changed: Array<ViewToken>
     }) => {
-      console.log({ viewableItems, changed })
       if (changed && changed.length > 0) {
         const index = changed[0].index as number
-        console.log({ index })
         setCurrentIndex(index - 1)
         if (index < data.length) {
           setDidReachEnd(false)
