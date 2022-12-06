@@ -7,5 +7,7 @@ module.exports = {
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': 'error',
     'sort-imports': 'off',
+    'react-native/no-inline-styles': 'off',
+    'no-undef': 'true',
   },
 }

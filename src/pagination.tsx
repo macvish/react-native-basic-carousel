@@ -7,21 +7,30 @@ interface PaginationProps {
   data: {}[]
   activeIndex: Animated.Value
   color?: string
+  paginationType?: 'default' | 'circle'
 }
 
 const Pagination: React.FC<PaginationProps> = ({
   activeIndex,
   color,
   data,
+  paginationType,
 }) => {
   const styles = useStyle()
 
   const renderItems = () => {
+    const dotWidthFunc = () => {
+      if (paginationType === 'circle') {
+        return [8, 10, 8]
+      }
+
+      return [20, 35, 20]
+    }
     return data.map((_, i) => {
       const inputRange = [(i - 1) * width, i * width, (i + 1) * width]
       const dotWidth = activeIndex.interpolate({
         inputRange,
-        outputRange: [20, 35, 20],
+        outputRange: dotWidthFunc(),
         extrapolate: 'clamp',
       })
       const opacity = activeIndex.interpolate({
@@ -37,6 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({
             {
               backgroundColor: color ?? '#667085',
               width: dotWidth,
+              height: paginationType === 'circle' ? 8 : 4,
               opacity,
             },
           ]}
@@ -62,7 +72,6 @@ const useStyle = () => {
       marginBottom: Platform.OS === 'ios' ? 15 : 25,
     },
     dot: {
-      height: 4,
       borderRadius: 7,
       marginHorizontal: 2,
     },

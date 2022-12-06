@@ -33,14 +33,22 @@ const App = () => {
   }
 
   const getItem = (item: Data) => {
-    console.log(item)
+    // console.log(item)
   }
 
   useEffect(() => {
     console.log(RNBasicCarouselModule)
   })
 
-  return <Carousel data={data} renderItem={renderItem} onSnapToItem={getItem} itemWidth={width} pagination />
+  return <Carousel
+    data={data}
+    renderItem={renderItem}
+    onSnapToItem={getItem}
+    itemWidth={width}
+    pagination
+    autoplay
+    paginationType='circle'
+  />
 }
 
 export default App

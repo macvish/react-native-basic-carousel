@@ -43,11 +43,14 @@ import Carousel from 'react-native-basic-carousel'
 | ----- | ------------ | ---- | ------- |
 | `data`  | Array of items to loop on | Array | **Required** |
 | `renderItem` | Takes an item from data and renders it into the list. The function receives one argument {item, index} Array | Function | **Required** |
+| `autoplay` | When true, the carousel slides automatically | Boolean | `false` |
 | `itemWidth` | Width of carousel's item and carousel itself | Number | **Required** |
 | `onSnapToItem` | Callback fired after snapping to an item | Function | `undefined`|
 | `bounces` | When true, the carousel bounces when it reaches the end (only available on `ios`) | Boolean | `false` |
 | `pagination` | When true, pagination is displayed under the carousel item | Boolean | `false` |
 | `paginationColor` | Takes a color code for the pagination dots | String |  `undefined` |
+| `paginationType` | Display pagination dots in either cirlce mode or default (Rectangle) | `default | circle` |  `default` |
+| `getCurrentIndex` | callback to get the current displayed item index  | Function |  `undefined` |
 
 ### Inherited props
 
