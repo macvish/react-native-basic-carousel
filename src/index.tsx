@@ -29,7 +29,7 @@ export interface CarouselProps extends FlatListProps<{}> {
   customPagination?: ({ activeIndex }: { activeIndex: number }) => React.ReactNode
 }
 
-export const Carousel: React.FC<CarouselProps> = ({
+export const Carousel: React.FC<CarouselProps> = React.forwardRef(({
   bounces,
   data,
   itemWidth,
@@ -44,7 +44,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   getCurrentIndex,
   customPagination,
   ...props
-}) => {
+}, ref) => {
   const [currentIndex, setCurrentIndex] = React.useState<number>(0)
   const [didReachEnd, setDidReachEnd] = React.useState<boolean>(false)
   const slidesRef = React.useRef<FlatList<{}>>(null)
@@ -54,9 +54,9 @@ export const Carousel: React.FC<CarouselProps> = ({
     waitForInteraction: true,
   }).current
 
-  const onEndReacted = () => {
-    setCurrentIndex((prevState) => prevState + 1)
+  const onEndReacted = (info: { distanceFromEnd: number }) => {
     setDidReachEnd(true)
+    props.onEndReached?.(info)
   }
 
   const onViewableItemsChanged = React.useCallback(
@@ -87,6 +87,23 @@ export const Carousel: React.FC<CarouselProps> = ({
       return customPagination({activeIndex: currentIndex})
     }
   }
+
+  const scrollToIndex = ({ index, animated, ...otherProps }: {
+    animated?: boolean | null | undefined;
+    index: number;
+    viewOffset?: number | undefined;
+    viewPosition?: number | undefined;
+  }) => {
+    slidesRef.current?.scrollToIndex({
+      animated,
+      index,
+      ...otherProps
+    })
+  }
+
+  React.useImperativeHandle(ref, () => ({ 
+    scrollToIndex
+  }))
 
   React.useEffect(() => {
     onSnapToItem?.(data[currentIndex])
@@ -161,6 +178,6 @@ export const Carousel: React.FC<CarouselProps> = ({
       {renderCustomPagination()}
     </>
   )
-}
+})
 
 export default NativeModules.RNBasicCarouselModule
