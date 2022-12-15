@@ -1,4 +1,5 @@
 # react-native-basic-carousel
+
 This is a basic React Native carousel which features a pagination.
 
 ![alt-tag](https://github.com/macvish/react-native-basic-carousel/blob/develop/example/example.gif)
@@ -6,12 +7,15 @@ This is a basic React Native carousel which features a pagination.
 ## Installation
 
 1. Download package with npm or yarn
+
 ```
 npm install react-native-basic-carousel
 ```
+
 ```
 yarn add react-native-basic-carousel
 ```
+
 2. Install pods
 
 ```
@@ -35,10 +39,24 @@ import Carousel from 'react-native-basic-carousel'
   renderItem={({item, index}) => <View>{...}</View>}
   itemWidth={width}
   onSnapItem={(item) => console.log(item)}
+  pagination
+  autoplay
+/>
+```
+
+To create your own pagination, do this:
+
+```jsx
+<Carousel 
+  data={data} 
+  renderItem={({item, index}) => <View>{...}</View>}
+  itemWidth={width}
+  customPagination={({ activeIndex }) => <View><Text>{activeIndex}<Text><View>}
 />
 ```
 
 ## Props
+
 | Props | Description  | Type | Default |
 | ----- | ------------ | ---- | ------- |
 | `data`  | Array of items to loop on | Array | **Required** |
@@ -52,6 +70,7 @@ import Carousel from 'react-native-basic-carousel'
 | `paginationColor` | Takes a color code for the pagination dots | String |  `undefined` |
 | `paginationType` | Display pagination dots in either cirlce mode or default (Rectangle) | String (`default`, `circle`) |  `default` |
 | `getCurrentIndex` | callback to get the current displayed item index  | Function |  `undefined` |
+| `customPagination` | Allows for custom made pagination to be displaued | Function |  `undefined` |
 
 ### Inherited props
 

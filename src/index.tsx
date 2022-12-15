@@ -26,6 +26,7 @@ export interface CarouselProps extends FlatListProps<{}> {
   autoplayDelay?: number
   placeholderContent?: React.ReactNode
   getCurrentIndex?: (value: number) => void
+  customPagination?: ({ activeIndex }: { activeIndex: number }) => React.ReactNode
 }
 
 export const Carousel: React.FC<CarouselProps> = ({
@@ -41,6 +42,7 @@ export const Carousel: React.FC<CarouselProps> = ({
   autoplayDelay,
   placeholderContent,
   getCurrentIndex,
+  customPagination,
   ...props
 }) => {
   const [currentIndex, setCurrentIndex] = React.useState<number>(0)
@@ -58,16 +60,11 @@ export const Carousel: React.FC<CarouselProps> = ({
   }
 
   const onViewableItemsChanged = React.useCallback(
-    ({
-      changed
-    }: {
-      viewableItems: Array<ViewToken>
-      changed: Array<ViewToken>
-    }) => {
-      if (changed && changed.length > 0) {
-        const index = changed[0].index as number
-        setCurrentIndex(index - 1)
-        if (index < data.length) {
+    ({ viewableItems }: { viewableItems: Array<ViewToken> }) => {
+      if (viewableItems && viewableItems.length > 0) {
+        const index = viewableItems[0].index as number
+        setCurrentIndex(index)
+        if (index < data?.length - 1) {
           setDidReachEnd(false)
         }
       }
@@ -81,9 +78,15 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   const getItemLayout = (_data: any, index: number) => ({
     length: itemWidth,
-    offset: itemWidth * (index - 1),
+    offset: itemWidth * index,
     index,
   })
+
+  const renderCustomPagination = () => {
+    if (customPagination && !pagination && data?.length > 1) {
+      return customPagination({activeIndex: currentIndex})
+    }
+  }
 
   React.useEffect(() => {
     onSnapToItem?.(data[currentIndex])
@@ -155,6 +158,7 @@ export const Carousel: React.FC<CarouselProps> = ({
           color={paginationColor}
         />
       )}
+      {renderCustomPagination()}
     </>
   )
 }

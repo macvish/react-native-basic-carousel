@@ -33,7 +33,7 @@ const App = () => {
   }
 
   const getItem = (item: Data) => {
-    // console.log(item)
+    console.log(item)
   }
 
   useEffect(() => {
@@ -44,9 +44,11 @@ const App = () => {
     data={data}
     renderItem={renderItem}
     onSnapToItem={getItem}
+    getCurrentIndex={(id) => console.log(id)}
     itemWidth={width}
-    pagination
+    customPagination={({ activeIndex }) => <View><Text>{activeIndex}</Text></View>}
     paginationType='circle'
+    autoplay
   />
 }
 
