@@ -1,10 +1,27 @@
 {
   "name": "react-native-basic-carousel",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React Native component used for snapping through and displaying a list views, a basic carousel",
   "homepage": "https://github.com/macvish/react-native-basic-carousel#readme",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "keywords": [
+    "react-native",
+    "react-native-carousel",
+    "react",
+    "carousel",
+    "slide",
+    "slider",
+    "swiper",
+    "images",
+    "scroll",
+    "items",
+    "snap",
+    "android",
+    "ios",
+    "snapping",
+    "autoplay"
+  ],
   "author": "Macanthony Ahaotu <macintony1@gmail.com>",
   "license": "MIT",
   "files": [
