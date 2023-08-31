@@ -69,6 +69,8 @@ To create your own pagination, do this:
 | `pagination` | When true, pagination is displayed under the carousel item | Boolean | `false` |
 | `paginationColor` | Takes a color code for the pagination dots | String |  `undefined` |
 | `paginationType` | Display pagination dots in either cirlce mode or default (Rectangle) | String (`default`, `circle`) |  `default` |
+| `paginationPosition` | Positions pagination to the top of the carousel or bottom | String | (`Top`, `bottom`) | `bottom`
+| `paginationBackgroundColor` | Background color for pagination wrapper | String | (`Top`, `bottom`) | `bottom`
 | `getCurrentIndex` | callback to get the current displayed item index  | Function |  `undefined` |
 | `customPagination` | Allows for custom made pagination to be displaued | Function |  `undefined` |
 

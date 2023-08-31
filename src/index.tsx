@@ -27,6 +27,8 @@ export interface CarouselProps extends FlatListProps<{}> {
   placeholderContent?: React.ReactNode
   getCurrentIndex?: (value: number) => void
   customPagination?: ({ activeIndex }: { activeIndex: number }) => React.ReactNode
+  paginationPosition?: 'top' | 'bottom'
+  paginationBackgroundColor?: string
 }
 
 export const Carousel: React.FC<CarouselProps> = React.forwardRef(({
@@ -43,6 +45,8 @@ export const Carousel: React.FC<CarouselProps> = React.forwardRef(({
   placeholderContent,
   getCurrentIndex,
   customPagination,
+  paginationPosition,
+  paginationBackgroundColor,
   ...props
 }, ref) => {
   const [currentIndex, setCurrentIndex] = React.useState<number>(0)
@@ -133,6 +137,16 @@ export const Carousel: React.FC<CarouselProps> = React.forwardRef(({
 
   return (
     <>
+      { paginationPosition !== 'top' && renderCustomPagination()}
+      {pagination && paginationPosition === 'top' && data?.length > 1 && (
+        <Pagination
+          data={data}
+          activeIndex={scrollX}
+          paginationType={paginationType}
+          color={paginationColor}
+          paginationBackgroundColor={paginationBackgroundColor}
+        />
+      )}
       <AnimatedFlatList
         {...props}
         ref={slidesRef}
@@ -167,15 +181,16 @@ export const Carousel: React.FC<CarouselProps> = React.forwardRef(({
         keyExtractor={(_, index) => index.toString()}
         initialScrollIndex={0}
       />
-      {pagination && data?.length > 1 && (
+      {pagination && paginationPosition !== 'top' && data?.length > 1 && (
         <Pagination
           data={data}
           activeIndex={scrollX}
           paginationType={paginationType}
           color={paginationColor}
+          paginationBackgroundColor={paginationBackgroundColor}
         />
       )}
-      {renderCustomPagination()}
+      { paginationPosition !== 'top' && renderCustomPagination()}
     </>
   )
 })

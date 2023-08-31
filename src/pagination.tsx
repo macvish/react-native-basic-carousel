@@ -8,6 +8,7 @@ interface PaginationProps {
   activeIndex: Animated.Value
   color?: string
   paginationType?: 'default' | 'circle'
+  paginationBackgroundColor?: string
 }
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -15,6 +16,7 @@ const Pagination: React.FC<PaginationProps> = ({
   color,
   data,
   paginationType,
+  paginationBackgroundColor
 }) => {
   const styles = useStyle()
 
@@ -56,7 +58,10 @@ const Pagination: React.FC<PaginationProps> = ({
     })
   }
 
-  return <View style={styles.dotContainer}>{renderItems()}</View>
+  return <View style={[
+    styles.dotContainer,
+    !!paginationBackgroundColor && { backgroundColor: paginationBackgroundColor }
+  ]}>{renderItems()}</View>
 }
 
 export default Pagination
