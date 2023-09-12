@@ -32,7 +32,7 @@ npx react-native run-ios
 ## Example
 
 ```jsx
-import Carousel from 'react-native-basic-carousel'
+import { Carousel } from 'react-native-basic-carousel'
 
 <Carousel 
   data={data} 
