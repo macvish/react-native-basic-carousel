@@ -137,7 +137,7 @@ export const Carousel: React.FC<CarouselProps> = React.forwardRef(({
 
   return (
     <>
-      { paginationPosition !== 'top' && renderCustomPagination()}
+      {paginationPosition === 'top' && renderCustomPagination()}
       {pagination && paginationPosition === 'top' && data?.length > 1 && (
         <Pagination
           data={data}

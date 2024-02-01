@@ -1,6 +1,6 @@
 {
   "name": "react-native-basic-carousel",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React Native component used for snapping through and displaying a list views, a basic carousel",
   "homepage": "https://github.com/macvish/react-native-basic-carousel#readme",
   "main": "lib/index.js",
